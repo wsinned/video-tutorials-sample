@@ -4,11 +4,14 @@
   "description": "First pass at microservices in node",
   "main": "index.js",
   "scripts": {
+    "start-dev-server": "nodemon src/bin/start-server.js --color",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pug": "^3.0.0",
+    "uuid": "^8.3.0"
   }
 }
