@@ -10,7 +10,7 @@ function start () {
 }
 
 function signalAppStart () {
-    console.log(`${env.appName} started`)
+    console.log(`${env.appName} started at ${new Date()}`)
     console.table([['Port', env.port], ['Environent', env.env]])
 }
 
