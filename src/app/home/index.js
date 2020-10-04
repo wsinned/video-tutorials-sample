@@ -2,7 +2,7 @@ const camelCaseKeys = require('camelcase-keys')
 const express = require('express')
 
 function createHandlers ({ queries }) {
-    function home (res, req, next) {
+    function home (req, res, next) {
         return queries
             .loadHomePage()
             .then(viewData => 
@@ -17,7 +17,11 @@ function createHandlers ({ queries }) {
 
 function createQueries ({ db }) {
     function loadHomePage() {
-        return 0
+        return db.then(client =>
+            client('videos')
+            .sum('view_count as videosWatched')
+            .then(rows => rows[0])
+        )
     }
     return {
         loadHomePage
