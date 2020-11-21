@@ -18,6 +18,7 @@ function requireFromEnv (key, defaultValue) {
 module.exports = {
     appName: requireFromEnv('APP_NAME', 'FirstPass'),
     databaseUrl: requireFromEnv('DATABASE_URL'),
+    messageStoreConnectionString: requireFromEnv('MESSAGE_STORE_CONNECTION_STRING'),
     env: requireFromEnv('NODE_ENV', 'dev'),
     port: parseInt(requireFromEnv('PORT', '8080'), 10),
     version: packageJson.version
