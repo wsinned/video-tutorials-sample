@@ -5,8 +5,8 @@
 - NodeJS v 12.xxx - I'm using 12.18.3
 - docker & docker compose
 - something to export environment variables
+  - I'm using https://direnv.net/ and a .envrc file. Dotenv can also be used.
 
-I'm using https://direnv.net/ and a .envrc file. Dotenv can also be used
 
 ## Running
 
@@ -18,4 +18,4 @@ npm install
 npm run start-dev-server
 ```
 
-That's all folks
+That's all folks.
