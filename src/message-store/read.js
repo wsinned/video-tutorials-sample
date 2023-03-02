@@ -27,9 +27,24 @@ function createRead ({ db }) {
             .then(res => res.rows.map(deserializeMessage))
     }
 
+    function fetch (streamName, projection) {
+        return read(streamName).then(messages => projection(messages, projection))
+    }
+
+    function project (events, projection) {
+        return events.reduce((entity, event) => {
+            if (!projection[event.type]) {
+                return entity
+            }
+
+            return projection[entity.type](entity, event)
+        }, projection.$init())
+    }
+
     return {
         read,
         readLastMessage,
+        fetch
     }
     
 }
