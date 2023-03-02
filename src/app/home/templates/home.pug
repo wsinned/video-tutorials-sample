@@ -5,5 +5,13 @@ block content
 
     p Viewers have watched #{videosWatched || 0} video(s).
 
+    p Video 12345
+    
     form(action="/record-viewing/12345" method="POST")
+        button(type="submit") Record viewing video
+    
+    br
+
+    p Video 54321
+    form(action="/record-viewing/54321" method="POST")
         button(type="submit") Record viewing video
